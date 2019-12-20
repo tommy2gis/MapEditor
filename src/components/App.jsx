@@ -19,7 +19,7 @@ import ExportModal from './modals/ExportModal'
 import SourcesModal from './modals/SourcesModal'
 import OpenModal from './modals/OpenModal'
 import ShortcutsModal from './modals/ShortcutsModal'
-import SurveyModal from './modals/SurveyModal'
+// import SurveyModal from './modals/SurveyModal'
 import DebugModal from './modals/DebugModal'
 
 import { downloadGlyphsMetadata, downloadSpriteMetadata } from '../libs/metadata'
@@ -707,10 +707,10 @@ export default class App extends React.Component {
         isOpen={this.state.isOpen.sources}
         onOpenToggle={this.toggleModal.bind(this, 'sources')}
       />
-      <SurveyModal
+      {/* <SurveyModal
         isOpen={this.state.isOpen.survey}
         onOpenToggle={this.toggleModal.bind(this, 'survey')}
-      />
+      /> */}
     </div>
 
     return <AppLayout

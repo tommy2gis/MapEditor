@@ -20,7 +20,7 @@ const DraggableLabel = SortableHandle((props) => {
 
 class IconAction extends React.Component {
   static propTypes = {
-    action: PropTypes.string.isRequired,
+    action: PropTypes.object.isRequired,
     onClick: PropTypes.func.isRequired,
     wdKey: PropTypes.string,
     classBlockName: PropTypes.string,
@@ -122,7 +122,7 @@ class LayerListItem extends React.Component {
           wdKey={"layer-list-item:"+this.props.layerId+":toggle-visibility"}
           action={visibilityAction}
           classBlockName="visibility"
-          classBlockModifier={visibilityAction}
+          classBlockModifier={visibilityAction.value}
           onClick={e => this.props.onLayerVisibilityToggle(this.props.layerId)}
         />
     </li>
