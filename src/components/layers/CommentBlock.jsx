@@ -12,15 +12,15 @@ class MetadataBlock extends React.Component {
 
   render() {
     return <InputBlock
-      label={"Comments"}
-      doc={"Comments for the current layer. This is non-standard and not in the spec."}
+      label={"备注"}
+      doc={"填写备注信息"}
       data-wd-key="layer-comment"
     >
       <StringInput
         multi={true}
         value={this.props.value}
         onChange={this.props.onChange}
-        default="Comment..."
+        default="备注..."
       />
     </InputBlock>
   }

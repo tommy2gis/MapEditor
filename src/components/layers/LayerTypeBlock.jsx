@@ -13,7 +13,7 @@ class LayerTypeBlock extends React.Component {
   }
 
   render() {
-    return <InputBlock label={"Type"} doc={latest.layer.type.doc}
+    return <InputBlock label={"类型"} doc={latest.layer.type.doc}
       data-wd-key={this.props.wdKey}
     >
       <SelectInput

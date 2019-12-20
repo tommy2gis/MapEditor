@@ -193,21 +193,21 @@ class OpenModal extends React.Component {
           data-wd-key="open-modal"
           isOpen={this.props.isOpen}
           onOpenToggle={() => this.onOpenToggle()}
-          title={'Open Style'}
+          title={'打开样式'}
         >
           {errorElement}
           <section className="maputnik-modal-section">
-            <h2>Upload Style</h2>
-            <p>Upload a JSON style from your computer.</p>
+            <h2>上传样式文件</h2>
+            <p>从本地上传一个JSON样式文件.</p>
             <FileReaderInput onChange={this.onUpload} tabIndex="-1">
-              <Button className="maputnik-upload-button"><MdFileUpload /> Upload</Button>
+              <Button className="maputnik-upload-button"><MdFileUpload /> 上传</Button>
             </FileReaderInput>
           </section>
 
           <section className="maputnik-modal-section">
-            <h2>Load from URL</h2>
+            <h2>从URL加载样式</h2>
             <p>
-              Load from a URL. Note that the URL must have <a href="https://enable-cors.org" target="_blank" rel="noopener noreferrer">CORS enabled</a>.
+              
             </p>
             <UrlInput
               data-wd-key="open-modal.url.input"
@@ -223,14 +223,14 @@ class OpenModal extends React.Component {
                 className="maputnik-big-button"
                 onClick={this.onOpenUrl}
                 disabled={this.state.styleUrl.length < 1}
-              >Open URL</Button>
+              >打开URL地址</Button>
             </div>
           </section>
 
           <section className="maputnik-modal-section maputnik-modal-section--shrink">
-            <h2>Gallery Styles</h2>
+            <h2>样式集浏览</h2>
             <p>
-              Open one of the publicly available styles to start from.
+              选择一个在线样式
             </p>
             <div className="maputnik-style-gallery-container">
             {styleOptions}
@@ -240,9 +240,9 @@ class OpenModal extends React.Component {
 
         <LoadingModal
           isOpen={!!this.state.activeRequest}
-          title={'Loading style'}
+          title={'加载样式'}
           onCancel={(e) => this.onCancelActiveRequest(e)}
-          message={"Loading: "+this.state.activeRequestUrl}
+          message={this.state.activeRequestUrl+":加载中"}
         />
       </div>
     )

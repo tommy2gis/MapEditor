@@ -12,7 +12,7 @@ class MinZoomBlock extends React.Component {
   }
 
   render() {
-    return <InputBlock label={"Min Zoom"} doc={latest.layer.minzoom.doc}
+    return <InputBlock label={"最小缩放级别"} doc={latest.layer.minzoom.doc}
       data-wd-key="min-zoom"
     >
       <NumberInput

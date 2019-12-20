@@ -28,7 +28,7 @@ class IconAction extends React.Component {
   }
 
   renderIcon() {
-    switch(this.props.action) {
+    switch(this.props.action.value) {
       case 'duplicate': return <MdContentCopy />
       case 'show': return <MdVisibility />
       case 'hide': return <MdVisibilityOff />
@@ -50,7 +50,7 @@ class IconAction extends React.Component {
 
     return <button
       tabIndex="-1"
-      title={this.props.action}
+      title={this.props.action.title}
       className={`maputnik-layer-list-icon-action ${classAdditions}`}
       data-wd-key={this.props.wdKey}
       onClick={this.props.onClick}
@@ -93,7 +93,7 @@ class LayerListItem extends React.Component {
   }
 
   render() {
-    const visibilityAction = this.props.visibility === 'visible' ? 'show' : 'hide';
+    const visibilityAction = this.props.visibility === 'visible' ? {value:'show',title:'显示'} : {value:'hide',title:'隐藏'};
 
     return <li
       key={this.props.layerId}
@@ -108,13 +108,13 @@ class LayerListItem extends React.Component {
         <span style={{flexGrow: 1}} />
         <IconAction
           wdKey={"layer-list-item:"+this.props.layerId+":delete"}
-          action={'delete'}
+          action={{value:'delete',title:'删除'}}
           classBlockName="delete"
           onClick={e => this.props.onLayerDestroy(this.props.layerId)}
         />
         <IconAction
           wdKey={"layer-list-item:"+this.props.layerId+":copy"}
-          action={'duplicate'}
+          action={{value:'duplicate',title:'复制'}}
           classBlockName="duplicate"
           onClick={e => this.props.onLayerCopy(this.props.layerId)}
         />

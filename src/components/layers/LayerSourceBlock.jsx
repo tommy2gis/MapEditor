@@ -19,7 +19,7 @@ class LayerSourceBlock extends React.Component {
   }
 
   render() {
-    return <InputBlock label={"Source"} doc={latest.layer.source.doc}
+    return <InputBlock label={"数据源"} doc={latest.layer.source.doc}
       data-wd-key={this.props.wdKey}
     >
       <AutocompleteInput

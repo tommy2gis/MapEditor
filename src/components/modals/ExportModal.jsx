@@ -69,16 +69,16 @@ class ExportModal extends React.Component {
       data-wd-key="export-modal"
       isOpen={this.props.isOpen}
       onOpenToggle={this.props.onOpenToggle}
-      title={'Export Style'}
+      title={'导出样式'}
     >
 
       <div className="maputnik-modal-section">
-        <h4>Download Style</h4>
+        <h4>下载样式</h4>
         <p>
-          Download a JSON style to your computer.
+          下载JSON样式到本地。
         </p>
 
-        <p>
+        {/* <p>
           <InputBlock label={"MapTiler Access Token: "}>
             <StringInput
               value={(this.props.mapStyle.metadata || {})['maputnik:openmaptiles_access_token']}
@@ -97,11 +97,11 @@ class ExportModal extends React.Component {
               onChange={this.changeMetadataProperty.bind(this, "maputnik:thunderforest_access_token")}
             />
           </InputBlock>
-        </p>
+        </p> */}
 
         <Button onClick={this.downloadStyle.bind(this)}>
           <MdFileDownload />
-          Download
+          下载
         </Button>
       </div>
 

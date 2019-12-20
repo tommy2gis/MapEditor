@@ -22,15 +22,15 @@ import layout from '../../config/layout.json'
 
 function layoutGroups(layerType) {
   const layerGroup = {
-    title: 'Layer',
+    title: '图层',
     type: 'layer'
   }
   const filterGroup = {
-    title: 'Filter',
+    title: '数据删选',
     type: 'filter'
   }
   const editorGroup = {
-    title: 'JSON Editor',
+    title: 'JSON预览',
     type: 'jsoneditor'
   }
   return [layerGroup, filterGroup].concat(layout[layerType].groups).concat([editorGroup])
@@ -210,25 +210,25 @@ export default class LayerEditor extends React.Component {
 
     const items = {
       delete: {
-        text: "Delete",
+        text: "删除",
         handler: () => this.props.onLayerDestroy(this.props.layer.id)
       },
       duplicate: {
-        text: "Duplicate",
+        text: "复制",
         handler: () => this.props.onLayerCopy(this.props.layer.id)
       },
       hide: {
-        text: (layout.visibility === "none") ? "Show" : "Hide",
+        text: (layout.visibility === "none") ? "显示" : "隐藏",
         handler: () => this.props.onLayerVisibilityToggle(this.props.layer.id)
       },
       moveLayerUp: {
-        text: "Move layer up",
+        text: "图层上移",
         // Not actually used...
         disabled: this.props.isFirstLayer,
         handler: () => this.moveLayer(-1)
       },
       moveLayerDown: {
-        text: "Move layer down",
+        text: "图层下移",
         // Not actually used...
         disabled: this.props.isLastLayer,
         handler: () => this.moveLayer(+1)
@@ -245,7 +245,7 @@ export default class LayerEditor extends React.Component {
       <header>
         <div className="layer-header">
           <h2 className="layer-header__title">
-            Layer: {this.props.layer.id}
+            图层: {this.props.layer.id}
           </h2>
           <div className="layer-header__info">
             <Wrapper

@@ -88,13 +88,13 @@ export default class CombiningFilterEditor extends React.Component {
     return <div className="maputnik-filter-editor">
       <div className="maputnik-filter-editor-compound-select" data-wd-key="layer-filter">
         <DocLabel
-          label={"Compound Filter"}
+          label={"混合过滤"}
           doc={latest.layer.filter.doc + " Combine multiple filters together by using a compound filter."}
         />
         <SelectInput
           value={combiningOp}
           onChange={this.onFilterPartChanged.bind(this, 0)}
-          options={[["all", "every filter matches"], ["none", "no filter matches"], ["any", "any filter matches"]]}
+          options={[["all", "都须匹配"], ["none", "都不匹配"], ["any", "任何匹配"]]}
         />
       </div>
       {editorBlocks}
