@@ -157,7 +157,10 @@ export default class MapboxGlMap extends React.Component {
         if(this.props.inspectModeEnabled) {
           return renderPopup(<FeaturePropertyPopup features={features} />, tmpNode);
         } else {
-          return renderPopup(<FeatureLayerPopup features={features} onLayerSelect={this.props.onLayerSelect} zoom={this.state.zoom} />, tmpNode);
+         // return renderPopup(<FeatureLayerPopup features={features} onLayerSelect={this.props.onLayerSelect} zoom={this.state.zoom} />, tmpNode);
+          var mountNode = document.createElement('div');
+          ReactDOM.render(<FeatureLayerPopup features={features} onLayerSelect={this.props.onLayerSelect} zoom={this.state.zoom}/>, mountNode)
+          return mountNode
         }
       }
     })
