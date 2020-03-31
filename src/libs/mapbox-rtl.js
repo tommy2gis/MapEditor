@@ -1,4 +1,4 @@
-import MapboxGl from 'mapbox-gl'
+import MapboxGl from '@shitao1988/swsk-mapbox-gl'
 import {readFileSync} from 'fs'
 
 const data = readFileSync(__dirname+"/../../node_modules/@mapbox/mapbox-gl-rtl-text/mapbox-gl-rtl-text.js", "utf8");

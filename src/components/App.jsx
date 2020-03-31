@@ -36,7 +36,7 @@ import isEqual from 'lodash.isequal'
 import Debug from '../libs/debug'
 import queryUtil from '../libs/query-util'
 
-import MapboxGl from 'mapbox-gl'
+import MapboxGl from '@shitao1988/swsk-mapbox-gl'
 
 
 // Similar functionality as <https://github.com/mapbox/mapbox-gl-js/blob/7e30aadf5177486c2cfa14fe1790c60e217b5e56/src/util/mapbox.js>
