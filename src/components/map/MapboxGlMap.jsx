@@ -123,6 +123,7 @@ export default class MapboxGlMap extends React.Component {
       ...this.props.options,
       container: this.container,
       style: this.props.mapStyle,
+      crs:'EPSG:4490',
       hash: true,
     }
 
